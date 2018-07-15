@@ -24,8 +24,7 @@ app.get('/menu', (req, res) => {
   )
 })
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds137611.mlab.com:37611/gyg-ordering', (err) => {
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/GyGApp', (err) => {
   if (err) {
     console.log('Error connecting to database', err);
   } else {

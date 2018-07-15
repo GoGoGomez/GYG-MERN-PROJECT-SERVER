@@ -1,7 +1,7 @@
 const mongoose = require ('mongoose')
 let Item = require('../models/item')
 
-mongoose.connect('mongodb://localhost:27017/GyGApp', (err) => {
+mongoose.connect(process.env.MONGOLAB_URI, (err) => {
   if (err) {
     console.log('Error connecting to database', err);
   } else {
