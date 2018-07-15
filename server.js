@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
+require('dotenv').config()
 
 const Item = require('./models/item')
 
@@ -24,7 +25,7 @@ app.get('/menu', (req, res) => {
 })
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/GyGApp', (err) => {
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds137611.mlab.com:37611/gyg-ordering', (err) => {
   if (err) {
     console.log('Error connecting to database', err);
   } else {
