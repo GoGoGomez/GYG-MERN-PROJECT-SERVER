@@ -11,3 +11,7 @@ heroku keys:remove
 ssh -v git@heroku.com
 
 ENV
+
+
+ps auxw | grep mongo
+sudo kill - 9 7233
