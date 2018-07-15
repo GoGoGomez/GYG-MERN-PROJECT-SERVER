@@ -1,13 +1,13 @@
 const mongoose = require ('mongoose')
 let Item = require('../models/item')
+ require('dotenv').config()
 
-mongoose.connect(process.env.MONGOLAB_URI, (err) => {
-  if (err) {
-    console.log('Error connecting to database', err);
-  } else {
-    console.log('Connected to database!');
-  }
-});
+mongoose.connect(process.env.MONGOLAB_URI).then(connection => {
+    console.log('Connected to MongoDB')
+  })
+  .catch(error => {
+    console.log(error.message)
+  })
 
 let items = [
     new Item ({
