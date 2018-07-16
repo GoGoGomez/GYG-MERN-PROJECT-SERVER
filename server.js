@@ -4,7 +4,6 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 // const menu = require("./routes/api/menu");
 require('dotenv').config()
-const db = require("./config/database");
 const Item = require('./models/item')
 
 
