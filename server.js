@@ -18,6 +18,10 @@ app.use(cors())
 // Load api end points
 app.use('/api/menu', menu)
 
+app.get('/', (req, res) => {
+  res.send('<h1>test</h1>')
+})
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect(db.mongoURI, { useNewUrlParser: true }, (err) => {
