@@ -9,7 +9,7 @@ const Item = require('./models/item')
 
 
 // DB Config
-// const db = require('./config/database')
+const db = require('./config/database')
 
 const app = express()
 
