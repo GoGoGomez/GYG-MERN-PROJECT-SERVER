@@ -1,8 +1,10 @@
 const mongoose = require ('mongoose')
 let Item = require('../models/item')
- require('dotenv').config()
+require('dotenv').config()
 
-mongoose.connect(process.env.MONGOLAB_URI).then(connection => {
+mongoose.connect(process.env.MONGOLAB_URI, {
+    useNewUrlParser: true
+  }).then(connection => {
     console.log('Connected to MongoDB')
   })
   .catch(error => {
@@ -11,17 +13,19 @@ mongoose.connect(process.env.MONGOLAB_URI).then(connection => {
 
 let items = [
     new Item ({
+    category: 40,
     imagePath: 'https://res.cloudinary.com/dxzy39s8n/image/upload/v1531621772/burrito.jpg',
-    title: 'Burritos',
+    title: 'Drinks',
     description: 'Grilled Chicken in GYG’s Guerrero marinade with Pico de Gallo and Roasted Tomato salsa.',
-    price: 11.70
-  }),
-    new Item ({
-    imagePath: 'https://res.cloudinary.com/dxzy39s8n/image/upload/v1531622052/fajitas.jpg',
-    title: 'Fajitas',
-    description: 'Your favourite burrito with sautéed capsicums, onions and mushrooms, fajita vinaigrette and crema. Rolled in a soft flour tortilla.',
-    price: 13.00
-  }),
+    options: [{
+      name: 'Jarritos Guava (Bottle)',
+      price: 4.70
+    },
+    {
+      name: 'Jarritos Guava (Bottle)',
+      price: 4.70
+    }]
+  })
 ]
 
 let done = 0
