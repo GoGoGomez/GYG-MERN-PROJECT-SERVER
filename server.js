@@ -18,6 +18,7 @@ app.use('/api/menu', menu)
 // DB Config
 const db = require('./config/database')
 
+mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGOLAB_URI, { useNewUrlParser: true }, (err) => {
   if (err) {
     console.log('Error connecting to database', err);
