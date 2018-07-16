@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   res.send('<h1>test</h1>')
 })
 
-router.get('/menu', (req, res) => {
+app.get('/menu', (req, res) => {
   Item.find().then(
     items => res.json(items)
   ).catch(
