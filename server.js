@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 app.use('/api/menu', menu)
 
 // DB Config
-const db = require('../config/database')
+const db = require('./config/database')
 
 mongoose.connect(db.mongoURI, { useNewUrlParser: true }, (err) => {
   if (err) {
