@@ -5,7 +5,7 @@ const cors = require('cors')
 require('dotenv').config()
 
 // DB Config
-const db = require('./config/database')
+// const db = require('./config/database')
 
 // require('dotenv').config()
 const menu = require('./routes/api/menu')
