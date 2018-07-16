@@ -2,6 +2,20 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const cors = require('cors')
+// const menu = require("./routes/api/menu");
+require('dotenv').config()
+const db = require("./config/database");
+const Item = require('./models/item')
+
+
+// DB Config
+// const db = require('./config/database')
+
+const app = express()
+
+const port = process.env.PORT || 4000
+// Body parse middlewasre
 require('dotenv').config()
 
 // Load end points
@@ -13,8 +27,10 @@ const app = express()
 // Body parse middleware
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
+
 app.use(bodyParser.json())
 app.use(cors())
+
 
 // Use routes
 app.use('/api/menu', menu)
