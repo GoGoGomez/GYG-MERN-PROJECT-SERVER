@@ -36,7 +36,6 @@ app.get('/menu', (req, res) => {
 })
 
 mongoose.Promise = global.Promise;
-console.log(process.env.MONGOLAB_URI);
 
 mongoose.connect(process.env.MONGOLAB_URI, {
     useNewUrlParser: true
@@ -50,7 +49,7 @@ mongoose.connect(process.env.MONGOLAB_URI, {
 
 
 app.listen(port, () =>
-console.log(`server running on port ${port}`)
+console.log(`server running on port ${port}`, process.env.MONGOLAB_URI)
 )
 
 module.exports = {app};
