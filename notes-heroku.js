@@ -1,17 +1,19 @@
-heroku create
+/*
+  heroku create
 
-git add .add
-git commit -m 'deploying app'
-git push heroku master
-
-
-heroku keys:add
-heroku keys:remove
-
-ssh -v git@heroku.com
-
-ENV
+  git add .add
+  git commit -m 'deploying app'
+  git push heroku master
 
 
-ps auxw | grep mongo
-sudo kill - 9 7233
+  heroku keys:add
+  heroku keys:remove
+
+  ssh -v git@heroku.com
+
+  ENV
+
+
+  ps auxw | grep mongo
+  sudo kill - 9 7233``
+*/
