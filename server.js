@@ -4,6 +4,9 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 require('dotenv').config()
 
+// DB Config
+const db = require('./config/database')
+
 // require('dotenv').config()
 const menu = require('./routes/api/menu')
 
@@ -16,9 +19,6 @@ app.use(cors())
 
 // Load api end points
 app.use('/api/menu', menu)
-
-// DB Config
-const db = require('./config/database')
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGOLAB_URI, { useNewUrlParser: true }, (err) => {
