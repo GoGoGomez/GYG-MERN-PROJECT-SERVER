@@ -1,31 +1,31 @@
+// Third party modules
 const express = require('express')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
-// require('dotenv').config()
+require('dotenv').config()
+
+// Load end points
 const menu = require('./routes/api/menu')
 
 const app = express()
 
-const port = process.env.PORT || 3000
 // Body parse middlewasre
 app.use(bodyParser.json())
 
-// Load api end points
+// Use routes
 app.use('/api/menu', menu)
 
-// DB Config
+// Database Config
 const db = require('./config/database')
 
-mongoose.connect(db.mongoURI, { useNewUrlParser: true }, (err) => {
-  if (err) {
-    console.log('Error connecting to database', err);
-  } else {
-    console.log('Connected to database!');
-  }
-});
+// Connecting to mongodb
+mongoose
+  .connect(db.mongoURI, { useNewUrlParser: true })
+  .then(() => console.log('Connected to mongodb'))
+  .catch(err => console.log(err))
 
 
-
+const port = process.env.PORT || 3000
 app.listen(port, () =>
 console.log(`server running on port ${port}`)
 )
