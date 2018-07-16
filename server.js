@@ -2,14 +2,12 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const cors = require('cors')
+const menu = require("./routes/api/menu");
 require('dotenv').config()
+const db = require("./config/database");
 
 // DB Config
 // const db = require('./config/database')
-
-// require('dotenv').config()
-const menu = require('./routes/api/menu')
-
 const app = express()
 
 const port = process.env.PORT || 3000
@@ -21,7 +19,8 @@ app.use(cors())
 app.use('/api/menu', menu)
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGOLAB_URI, { useNewUrlParser: true }, (err) => {
+
+mongoose.connect(db.mongoURI, { useNewUrlParser: true }, (err) => {
   if (err) {
     console.log('Error connecting to database', err);
   } else {
