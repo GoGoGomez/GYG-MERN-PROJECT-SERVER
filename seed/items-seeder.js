@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGOLAB_URI, {
 let items = [
     new Item ({
     category: 40,
-    imagePath: 'https://res.cloudinary.com/dxzy39s8n/image/upload/v1531621772/burrito.jpg',
+    imagePath: 'https://res.cloudinary.com/dxzy39s8n/image/upload/v1531740195/drinks.jpg',
     title: 'Drinks',
     description: 'Grilled Chicken in GYG’s Guerrero marinade with Pico de Gallo and Roasted Tomato salsa.',
     options: [{
@@ -22,7 +22,7 @@ let items = [
       price: 4.70
     },
     {
-      name: 'Jarritos Guava (Bottle)',
+      name: 'Jarritos Lime (Bottle)',
       price: 4.70
     }]
   })

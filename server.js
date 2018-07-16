@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
+const cors = require('cors')
 // require('dotenv').config()
 const menu = require('./routes/api/menu')
 
@@ -9,6 +10,7 @@ const app = express()
 const port = process.env.PORT || 3000
 // Body parse middlewasre
 app.use(bodyParser.json())
+app.use(cors())
 
 // Load api end points
 app.use('/api/menu', menu)
