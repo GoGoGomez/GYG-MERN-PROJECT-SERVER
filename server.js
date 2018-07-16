@@ -6,6 +6,7 @@ require('dotenv').config()
 
 // Load end points
 const menu = require('./routes/api/menu')
+const users = require('./routes/api/users')
 
 const app = express()
 
@@ -14,6 +15,7 @@ app.use(bodyParser.json())
 
 // Use routes
 app.use('/api/menu', menu)
+app.use('/api/users', users)
 
 // Database Config
 const db = require('./config/database')
@@ -25,7 +27,7 @@ mongoose
   .catch(err => console.log(err))
 
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 app.listen(port, () =>
 console.log(`server running on port ${port}`)
 )

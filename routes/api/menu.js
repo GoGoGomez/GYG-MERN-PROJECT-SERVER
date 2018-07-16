@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 // Load in Item module
-const Item = require('../../models/item')
+const Item = require('../../models/Item')
 
 
 // @route GET     /api/menu
