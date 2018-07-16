@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const cors = require('cors')
-const menu = require("./routes/api/menu");
+// const menu = require("./routes/api/menu");
 require('dotenv').config()
 const db = require("./config/database");
 
@@ -16,10 +16,20 @@ app.use(bodyParser.json())
 app.use(cors())
 
 // Load api end points
-app.use('/api/menu', menu)
+// app.use('/api/menu', menu)
 
 app.get('/', (req, res) => {
   res.send('<h1>test</h1>')
+})
+
+router.get('/menu', (req, res) => {
+  Item.find().then(
+    items => res.json(items)
+  ).catch(
+    error => res.status(500).json({
+      error: error.message
+    })
+  )
 })
 
 mongoose.Promise = global.Promise;
