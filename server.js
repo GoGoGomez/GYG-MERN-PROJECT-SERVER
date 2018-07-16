@@ -4,15 +4,16 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 // const menu = require("./routes/api/menu");
 require('dotenv').config()
+const db = require("./config/database");
 const Item = require('./models/item')
 
 
 // DB Config
-const db = require('./config/database')
+// const db = require('./config/database')
 
 const app = express()
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000
 // Body parse middlewasre
 app.use(bodyParser.json())
 app.use(cors())
@@ -36,13 +37,14 @@ app.get('/menu', (req, res) => {
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(db.mongoURI, { useNewUrlParser: true }, (err) => {
-  if (err) {
-    console.log('Error connecting to database', err);
-  } else {
-    console.log('Connected to database!');
-  }
-});
+mongoose.connect(process.env.MONGOLAB_URI, {
+    useNewUrlParser: true
+  }).then(connection => {
+    console.log('Connected to MongoDB')
+  })
+  .catch(error => {
+    console.log(error.message)
+  })
 
 
 
