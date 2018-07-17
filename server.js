@@ -3,22 +3,12 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
-// const menu = require("./routes/api/menu");
-require('dotenv').config()
-const db = require("./config/database");
-const Item = require('./models/item')
-
-
-// DB Config
-// const db = require('./config/database')
-
-const app = express()
-
-const port = process.env.PORT || 4000
-// Body parse middlewasre
 require('dotenv').config()
 
-// Load end points
+// Body-Parser middleware
+require('dotenv').config()
+
+// Load Routes
 const menu = require('./routes/api/menu')
 const users = require('./routes/api/users')
 
@@ -31,13 +21,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
 
-
 // Use routes
 app.use('/api/menu', menu)
 app.use('/api/users', users)
 
 // Database Config
-const db = require('./config/database')
+const db = require("./config/database");
 
 // Connecting to mongodb
 mongoose
@@ -46,7 +35,7 @@ mongoose
   .catch(err => console.log(err))
 
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 4000
 app.listen(port, () =>
 console.log(`server running on port ${port}`, process.env.MONGOLAB_URI)
 )
