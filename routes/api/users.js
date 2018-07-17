@@ -1,6 +1,7 @@
 const express = require('express')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const passport = require('passport')
 const keys = require('../../config/keys')
 
 // Express router
@@ -84,6 +85,7 @@ router.post('/login', (req, res) => {
             { expiresIn: 3600 },
             (err, token) => {
               if (err) console.log(err)
+
               res.json({
                 message: true, 
                 token: 'Bearer ' + token
@@ -97,6 +99,16 @@ router.post('/login', (req, res) => {
   .catch(err => console.log(err))
 })
 
+// @route GET     /api/users/current
+// @description   Return current user
+// @access        Private
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+  res.json({
+    id: req.user.id, 
+    name: req.user.name, 
+    email: req.user.email
+  })
+})
 
 
 module.exports = router
