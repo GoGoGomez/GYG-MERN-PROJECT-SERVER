@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 // @description   get individual items
 // @access        public
 router.get('/:id', (req, res) => {
-  Item.find({ id: req.params.id }).then(
+  Item.find({ _id: req.params.id }).then(
     items => res.json(items)
   ).catch(
     error => res.status(500).json({
