@@ -3,6 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const passport = require('passport')
 require('dotenv').config()
 
 // Body-Parser middleware
@@ -24,6 +25,15 @@ app.use(cors())
 // Use routes
 app.use('/api/menu', menu)
 app.use('/api/users', users)
+
+
+// Passport Middleware
+app.use(passport.initialize())
+
+// Passport Config
+require('./config/passport')(passport)
+
+
 
 // Database Config
 const db = require("./config/database");

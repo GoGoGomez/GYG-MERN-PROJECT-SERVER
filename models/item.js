@@ -6,7 +6,8 @@ const Item = new Schema({
   imagePath: {type: String},
   title: {type: String},
   description: {type: String},
-  options: {type: Array}
+  options: {type: Object}, 
+  price: {type: Number}
 })
 
 module.exports = mongoose.model('Item', Item)
