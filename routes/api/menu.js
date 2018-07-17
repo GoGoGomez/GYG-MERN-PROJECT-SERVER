@@ -18,4 +18,17 @@ router.get('/', (req, res) => {
   )
 })
 
+// @route GET     /api/menu/:id
+// @description   get individual items
+// @access        public
+router.get('/:id', (req, res) => {
+  Item.find({ id: req.params.id }).then(
+    items => res.json(items)
+  ).catch(
+    error => res.status(500).json({
+      error: error.message
+    })
+  )
+})
+
 module.exports = router
