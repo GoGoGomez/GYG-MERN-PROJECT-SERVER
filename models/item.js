@@ -8,15 +8,15 @@ const Item = new Schema({
   description: String,
   filling: {
     type: Boolean, 
-    default: true
+    default: false
   },
   heat: {
     type: Boolean, 
-    default: true
+    default: false
   },
   size: {
     type: Boolean, 
-    default: true
+    default: false
   },
   price: Number
 })
