@@ -15,26 +15,25 @@ let items = [
     new Item ({
     imagePath: 'https://res.cloudinary.com/dxzy39s8n/image/upload/v1531740195/drinks.jpg',
     title: 'Drinks',
-    description: 'Grilled Chicken in GYG’s Guerrero marinade with Pico de Gallo and Roasted Tomato salsa.',
-    options: [{
-      name: 'Jarritos Guava (Bottle)',
-      price: 4.70
-    },
-    {
-      name: 'Jarritos Lime (Bottle)',
-      price: 4.70
-    }]
+    description: 'Grilled Chicken in GYG’s Guerrero marinade with Pico de Gallo and Roasted Tomato salsa.'
   }), 
   new Item ({
     imagePath: 'https://res.cloudinary.com/dxzy39s8n/image/upload/v1531621772/burrito.jpg',
     title: 'Burritos',
     description: 'Rice, jack cheese, vegetarian black beans, salsa and filling, rolled in a soft flour tortilla',
     price: 11.70,
-    options: {
-      filling: true,
-      heat: true,
-      size: true,
-    }
+    filling: true,
+    heat: true,
+    size: true,
+  }),
+  new Item({
+    imagePath: 'https://res.cloudinary.com/dxzy39s8n/image/upload/v1531959419/enchiladas.jpg',
+    title: 'Enchiladas',
+    description: 'Your favourite burrito topped with salsas, melted jack cheese, crema, guacamole and corn chips.',
+    price: 15.00,
+    filling: true,
+    heat: true,
+    size: true,
   })
 ]
 
