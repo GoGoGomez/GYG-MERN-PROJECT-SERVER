@@ -6,8 +6,7 @@ const cors = require('cors')
 const passport = require('passport')
 require('dotenv').config()
 
-// Body-Parser middleware
-require('dotenv').config()
+// require('dotenv').config()
 
 // Load Routes
 const menu = require('./routes/api/menu')
