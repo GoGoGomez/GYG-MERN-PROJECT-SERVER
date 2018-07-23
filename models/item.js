@@ -18,7 +18,8 @@ const Item = new Schema({
     type: Boolean, 
     default: false
   },
-  price: Number
+  price: Number,
+  modifications: Array
 })
 
 module.exports = mongoose.model('Item', Item)

@@ -33,7 +33,7 @@ let items = [
       "https://res.cloudinary.com/dxzy39s8n/image/upload/v1531959419/enchiladas.jpg",
     title: "Enchiladas",
     description:
-      "Your favourite burrito topped with salsas, melted jack cheese, crema, guacamole and corn chips.",
+      "Your favourite burrito topped with salsas, melted jack cheese, sour cream, guacamole and corn chips.",
     price: 15.0,
     filling: true,
     heat: true,
@@ -42,7 +42,7 @@ let items = [
   new Item({
     imagePath:
       "https://res.cloudinary.com/dxzy39s8n/image/upload/v1532311323/Cali_Burrito.jpg",
-    title: "Cali Burrito",
+    title: "Cali Burritos",
     description: "The Cali Burrito",
     price: 13.0,
     filling: true,
@@ -63,7 +63,7 @@ let items = [
   new Item({
     imagePath:
       "https://res.cloudinary.com/dxzy39s8n/image/upload/v1532311284/burrito-bowls.jpg",
-    title: "BURRITO BOWLS",
+    title: "Burrito Bowls",
     description:
       "Rice, jack cheese, vegetarian black beans, salsa and filling, served in a bowl",
     price: 11.7,
@@ -74,7 +74,7 @@ let items = [
   new Item({
     imagePath:
       "https://res.cloudinary.com/dxzy39s8n/image/upload/v1532311275/fajita-bowls.jpg",
-    title: "FAJITA BOWLS",
+    title: "Fajita Bowls",
     description:
       "Your favourite burrito with sautéed capsicums, onions and mushrooms, fajita vinaigrette and crema served in a bowl.",
     price: 13.0,
@@ -85,16 +85,22 @@ let items = [
   new Item({
     imagePath:
       "https://res.cloudinary.com/dxzy39s8n/image/upload/v1532311263/Soft-tacos.jpg",
-    title: "TACOS",
+    title: "Tacos",
     description:
       "Mexican street style with salsa, filling and a lime wedge, in a corn tortilla.",
     price: 5.0,
-    filling: true
+    filling: true,
+    modifications: [
+      {name: 'Add Guacamole', price: 2.00},
+      {name: 'Use Brown Rice', price: 1.00},
+      {name: 'Use Whole Wheat Tortilla', price: 0.50},
+      {name: 'No beans'}
+    ]
   }),
   new Item({
     imagePath:
       "https://res.cloudinary.com/dxzy39s8n/image/upload/v1532311245/quesadillas.jpg",
-    title: "QUESADILLAS",
+    title: "Quesadillas",
     description:
       "Grilled soft corn tortillas, melted jack cheese, salsa and filling.",
     price: 4.5,
