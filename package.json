@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha **/*.test.js",
+    "test-watch": "nodemon --exec \"npm test\""
   },
   "engines": {
     "node": "6.2.2"
@@ -29,7 +31,11 @@
   "directories": {
     "test": "tests"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "expect": "^23.4.0",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ianmcateer/GYG-MERN-PROJECT-SERVER.git"
