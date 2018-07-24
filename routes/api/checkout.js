@@ -15,7 +15,6 @@ router.post('/', (req, res) => {
   }
 
   // send email
-  
   const api_key = process.env.mail_gun_api
   const domain =process.env. mail_gun_domain
   const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain})
@@ -36,9 +35,12 @@ router.post('/', (req, res) => {
   };
   
   mailgun.messages().send(data, function (error, body) {
-    if (error) console.log(error)
+    if (error) {
+      console.log(error)
+      res.sendStatus(500)
+    }
     console.log(body)
-    res.redirect('/menu');
+    res.sendStatus(200)
   })
 })
 
