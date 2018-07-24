@@ -8,6 +8,7 @@ router.post('/', (req, res) => {
   const body = req.body
   const { errors, isValid } = validateCheckoutInput(body)
   // console.log(errors)
+  
 
   // // Check Validation
   if (!isValid) {
@@ -20,7 +21,6 @@ router.post('/', (req, res) => {
   const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain})
 
   if (!body.company) body.company = 'Company name not provied'
-  
   const data = {
     from: `Guzman y Gomez <${process.env.denis_email}>`,
     to: `${process.env.denis_email}`,
@@ -39,9 +39,9 @@ router.post('/', (req, res) => {
       console.log(error)
       res.sendStatus(500)
     }
-    console.log(body)
-    res.sendStatus(200)
+
+    res.send({msg: 'success'})
+
   })
 })
-
 module.exports = router
