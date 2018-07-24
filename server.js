@@ -6,12 +6,12 @@ const cors = require('cors')
 const passport = require('passport')
 require('dotenv').config()
 
-// Body-Parser middleware
-require('dotenv').config()
+// require('dotenv').config()
 
 // Load Routes
 const menu = require('./routes/api/menu')
 const users = require('./routes/api/users')
+const checkout = require('./routes/api/checkout')
 
 const app = express()
 
@@ -25,6 +25,7 @@ app.use(cors())
 // Use routes
 app.use('/api/menu', menu)
 app.use('/api/users', users)
+app.use('/api/checkout', checkout)
 
 
 // Passport Middleware
