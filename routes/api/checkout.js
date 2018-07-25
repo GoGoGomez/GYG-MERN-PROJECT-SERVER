@@ -46,7 +46,10 @@ router.post('/', (req, res) => {
     }
  
     mailgun.messages().send(data, (error, body) => {
-      if (error) console.log(error)
+      if (error) {
+        console.log(error)
+        res.sendStatus(500)
+      }
       console.log(body)
     })
   }
