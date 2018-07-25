@@ -44,11 +44,7 @@ router.post('/', (req, res) => {
     }
  
     mailgun.messages().send(data, (error, body) => {
-      if (error) {
-       // console.log(error)
-        res.status(400).json(error)
-      }
-      console.log(body)
+      if (error) res.status(400).json(error)
     })
   }
 
@@ -60,7 +56,6 @@ router.post('/', (req, res) => {
   
   res.send({msg: 'email sent'})
 })
-
 
 module.exports = router
 
