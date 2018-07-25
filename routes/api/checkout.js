@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 
-
 // Checkout validations
 const validateCheckoutInput = require('../../validation/checkout')
 
@@ -58,9 +57,7 @@ router.post('/', (req, res) => {
 
   // Send order confirmation to customer
   sendEmail(body, false)
-   
-
-
+  
   res.send({msg: 'email sent'})
 })
 
