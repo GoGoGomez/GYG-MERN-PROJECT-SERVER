@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 
-
 // Checkout validations
 const validateCheckoutInput = require('../../validation/checkout')
 
@@ -10,9 +9,8 @@ router.post('/', (req, res) => {
   const body = req.body
   const { errors, isValid } = validateCheckoutInput(body)
   // console.log(errors)
-  
 
-  // // Check Validation
+  // Check Validation
   if (!isValid) {
     return res.status(400).json(errors)
   }
@@ -46,11 +44,7 @@ router.post('/', (req, res) => {
     }
  
     mailgun.messages().send(data, (error, body) => {
-      if (error) {
-        console.log(error)
-        res.sendStatus(500)
-      }
-      console.log(body)
+      if (error) res.status(400).json(error)
     })
   }
 
@@ -59,12 +53,9 @@ router.post('/', (req, res) => {
 
   // Send order confirmation to customer
   sendEmail(body, false)
-   
-
-
+  
   res.send({msg: 'email sent'})
 })
-
 
 module.exports = router
 
