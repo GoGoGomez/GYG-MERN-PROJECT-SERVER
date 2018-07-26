@@ -55,12 +55,14 @@ router.post('/', (req, res) => {
     isValid
   } = validateCheckoutInput(body)
 
-  console.log(errors)
+  console.log(body)
   
   // // Check Validation
   if (!isValid) {
     return res.status(400).json(errors)
   }
+
+  if(!body.company) body.company = 'Company not provided'
 
   // Send customer order to  Alex (resaurant owner)
   sendEmail(getData(body, true))
