@@ -5,9 +5,6 @@ const nodemailer = require('nodemailer');
 // Checkout validations
 const validateCheckoutInput = require('../../validation/checkout')
 
-
-
-
 const sendEmail = (data) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -34,7 +31,7 @@ const getData = (body, isGuzman) => {
     return {
       from: `Customer Order <${process.env.gmail_user}>`,
       // USE ALEX EMAIL
-      to: `ktdenis.1@live.com`,
+      to: `${process.env.ian}`,
       subject: 'I would like my orders please',
       html: require('../../email_transaction/email_receiver')(body, media)
     };
