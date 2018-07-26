@@ -23,7 +23,8 @@ let items = [
     title: "Burritos",
     description:
       "Rice, jack cheese, vegetarian black beans, salsa and filling, rolled in a soft flour tortilla",
-    price: 11.7,
+    price: 11.70,
+    miniPrice: 8.00,
     filling: true,
     heat: true,
     size: true,
@@ -59,6 +60,7 @@ let items = [
     description:
       "Your favourite burrito topped with salsas, melted jack cheese, sour cream, guacamole and corn chips.",
     price: 15.0,
+    miniPrice: 10.00,
     filling: true,
     heat: true,
     size: true,
@@ -89,7 +91,8 @@ let items = [
       "https://res.cloudinary.com/dxzy39s8n/image/upload/v1532311323/Cali_Burrito.jpg",
     title: "Cali Burritos",
     description: "The Cali Burrito",
-    price: 13.0,
+    price: 13.00,
+    miniPrice: 9.00,
     filling: true,
     heat: true,
     size: true,
@@ -122,6 +125,7 @@ let items = [
     description:
       "Your favourite burrito with sautéed capsicums, onions and mushrooms, fajita vinaigrette and crema. Rolled in a soft flour tortilla.",
     price: 13.0,
+    miniPrice: 9.00,
     filling: true,
     heat: true,
     size: true,
@@ -157,6 +161,7 @@ let items = [
     description:
       "Rice, jack cheese, vegetarian black beans, salsa and filling, served in a bowl",
     price: 11.7,
+    miniPrice: 8.00,
     filling: true,
     heat: true,
     size: true,
@@ -188,6 +193,7 @@ let items = [
     description:
       "Your favourite burrito with sautéed capsicums, onions and mushrooms, fajita vinaigrette and crema served in a bowl.",
     price: 13.0,
+    miniPrice: 9.00,
     filling: true,
     heat: true,
     size: true,
@@ -225,6 +231,7 @@ let items = [
       "Mexican street style with salsa, filling and a lime wedge, in a corn tortilla.",
     price: 5.0,
     filling: true,
+    heat: true,
     modifications: [
       { name: "Add Cheese", price: 0.5 },
       { name: "Add Fresh Jalapenos", price: 0.5 },
@@ -245,6 +252,7 @@ let items = [
       "Grilled soft corn tortillas, melted jack cheese, salsa and filling.",
     price: 4.5,
     filling: true,
+    heat: true,
     modifications: [
       { name: "Add Fresh Jalapenos", price: 0.5 },
       { name: "Add Habanero" },
@@ -262,8 +270,11 @@ let items = [
     title: "Nachos",
     description:
       "Corn chips, melted jack cheese, vegetarian black beans, salsa, guacamole and filling.",
-    price: 12.5,
+    price: 12.50,
+    miniPrice: 9.00,
     filling: true,
+    heat: true,
+    size: true,
     //Nachos Modification
     modifications: [
       { name: "Add Sour Cream", price: 0.5 },
@@ -278,9 +289,7 @@ let items = [
       { name: "No Guacamole" },
       { name: "No Salsa" },
       { name: "No Pico De Gallo" },
-      {
-        name: "No Beans"
-      }
+      { name: "No Beans" }
     ]
   }),
   new Item({
@@ -289,6 +298,9 @@ let items = [
     title: "Nacho Fries",
     description: "Nacho Fries",
     price: 13.0,
+    miniPrice: 9.00,
+    heat: true,
+    size: true,
     //Nachos Modification
     modifications: [
       { name: "Add Roasted Jalapeño Salsa (Mild)" },
@@ -318,6 +330,9 @@ let items = [
     description:
       "Mixed leaf lettuce, corn, cucumber, pico de gallo salsa, mexican vinaigrette dressing and filling.",
     price: 11.5,
+    miniPrice: 8.00,
+    heat: true,
+    size: true,
     modifications: [
       { name: "Add Guacamole", price: 2 },
       { name: "Add Queso", price: 2 },
