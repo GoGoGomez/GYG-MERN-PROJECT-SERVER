@@ -1,5 +1,6 @@
 module.exports = (body, media) => {
   const name = (!media) ? `${body.firstName} ${body.lastName}` : 'GYG REPRESENTATIVE'
+  const date = new Date();
 
   return `
   <!DOCTYPE html>
@@ -111,6 +112,9 @@ module.exports = (body, media) => {
                           <strong>Address</strong>: ${body.street} ${body.city}, ${body.postcode}</p>
                         <p>
                           <strong>Company</strong>: ${body.company}
+                        </p>
+                        <p>
+                          <strong>Date</strong>: ${date}
                         </p>
                         <p>
                           <strong>My orders</strong>: ${body.userOrders}
