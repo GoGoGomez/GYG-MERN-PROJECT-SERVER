@@ -22,7 +22,8 @@ const Item = new Schema({
   price: Number,
   miniPrice: Number,
   modifications: Array,
-  extras: Array
+  extras: Array,
+  options: Array
 })
 
 module.exports = mongoose.model('Item', Item)
