@@ -54,6 +54,8 @@ router.post('/', (req, res) => {
     errors,
     isValid
   } = validateCheckoutInput(body)
+
+  console.log(errors)
   
   // // Check Validation
   if (!isValid) {

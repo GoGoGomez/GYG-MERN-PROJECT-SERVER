@@ -113,7 +113,7 @@ module.exports = (body, media) => {
                           <strong>Company</strong>: ${body.company}
                         </p>
                         <p>
-                          <strong>My orders</strong>: ${body.orders}
+                          <strong>My orders</strong>: ${body.userOrders}
                         </p>
                       </td>
                     </tr>

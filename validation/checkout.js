@@ -12,7 +12,7 @@ module.exports = function validateRegisterInput(data) {
   data.lastName = !isEmpty(data.lastName) ? data.lastName : ''
   data.email = !isEmpty(data.email) ? data.email : ''
   data.phoneNumber = !isEmpty(data.phoneNumber) ? data.phoneNumber : ''
-  data.userOrders = !isEmpty(data.phoneNumber) ? data.userOrders : ''
+  data.userOrders = !isEmpty(data.userOrders) ? data.userOrders : ''
 
   if (!Validator.isLength(data.firstName, { min: 2, max: 30 })) {
     errors.firstName = 'First name must be between 2 and 30 characters'
@@ -53,6 +53,8 @@ module.exports = function validateRegisterInput(data) {
   if (Validator.isEmpty(data.email)) {
     errors.email = 'Email field is required'
   }
+
+  console.log('running')
   
   if (!Validator.isEmail(data.email)) {
     errors.email = 'Email is invalid'
