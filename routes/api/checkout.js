@@ -5,9 +5,6 @@ const nodemailer = require('nodemailer');
 // Checkout validations
 const validateCheckoutInput = require('../../validation/checkout')
 
-
-
-
 const sendEmail = (data) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
