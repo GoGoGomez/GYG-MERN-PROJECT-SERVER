@@ -294,6 +294,7 @@ let items = [
     description: "Nacho Fries",
     price: 13.0,
     miniPrice: 9.00,
+    filling: true,
     heat: true,
     size: true,
     //Nachos Modification
@@ -417,8 +418,8 @@ let items = [
       { name: "Sprite 600ml", price: 4.20, image: "https://res.cloudinary.com/dxzy39s8n/image/upload/v1531740195/drinks.jpg" },
       { name: "Lift 390ml", price: 3.20, image: "https://res.cloudinary.com/dxzy39s8n/image/upload/v1531740195/drinks.jpg" },
       { name: "Mt Franklin Sparkling 450ml", price: 3.70, image: "https://res.cloudinary.com/dxzy39s8n/image/upload/v1531740195/drinks.jpg" },
-      { name: "Mt Franklin Still 600ml", price: 3.20, image: "" },
-      { name: "Ginger Beer", price: 3.70, image: "" }
+      { name: "Mt Franklin Still 600ml", price: 3.20, image: "https://res.cloudinary.com/dxzy39s8n/image/upload/v1531740195/drinks.jpg" },
+      { name: "Ginger Beer", price: 3.70, image: "https://res.cloudinary.com/dxzy39s8n/image/upload/v1531740195/drinks.jpg" }
     ]
   }),
   new Item({
@@ -534,10 +535,7 @@ let items = [
         description: "",
         price: 5.50,
         image: "https://res.cloudinary.com/dxzy39s8n/image/upload/v1531740195/drinks.jpg"
-      },
-
-
-
+      }
     ]
   }),
   new Item({
